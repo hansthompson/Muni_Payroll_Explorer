@@ -1,0 +1,16 @@
+{
+    "contents" : "# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\nlibrary(ggplot2)\n\nshinyServer(function(input, output) {\n\n  \n  load(file = \"C:/Users/Hans T/Desktop/Muni_Payroll_Explorer/payroll.rda\")\n\n  dat <- reactive({\n    payroll[payroll$Bargaining.Unit == input$Bargaining.Unit & payroll$year == input$year ,]\n  })\n  \n  output$hist <- renderPlot({\n   if(input$cost == \"Earnings\") {\n   p <- ggplot(data = dat()) + geom_bar (aes(x = Earnings, fill = Job.Title)) #+   scale_fill_brewer(palette=\"Set1\") \n   print(p)\n   }\n   \n   if(input$cost == \"Overtime\") {\n     p <- ggplot(data = dat()) + geom_bar (aes(x = Overtime, fill = Job.Title))# +    scale_fill_brewer(palette=\"Set1\")\n     print(p)\n   }\n   \n   if(input$cost == \"Benefits\") {\n     p <- ggplot(data = dat()) + geom_bar (aes(x = Benefits, fill = Job.Title))# +    scale_fill_brewer(palette=\"Set1\")\n     print(p)\n   }\n  })\n\n})\n",
+    "created" : 1408300707088.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2099764815",
+    "id" : "FB1230EF",
+    "lastKnownWriteTime" : 1408314126,
+    "path" : "C:/Users/Hans T/Desktop/Muni_Payroll_Explorer/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,17 @@
+{
+    "contents" : "library(xlsx)\n\npayroll2012 <- read.xlsx(\"C:\\\\Users\\\\Hans T\\\\Desktop\\\\Muni_Payroll_Explorer\\\\2012-Anc-Muni-PayrolltsortedHighesttoLowestPaid1.xlsx\",\n               sheetIndex = 2, \n               header = TRUE,\n               colIndex = 1:8,\n               rowIndex = 1:3201)\n\npayroll2013 <- read.xlsx(\"C:\\\\Users\\\\Hans T\\\\Desktop\\\\Muni_Payroll_Explorer\\\\MUNI-Payroll-Password-protected2.xlsx\",\n               header = TRUE,\n               sheetIndex = 1)\n\n\nyear <- 2012\npayroll2012 <- cbind(payroll2012, year)\npayroll2012 <- payroll2012[,-c(4,8)]\nyear <- 2013\npayroll2013 <- cbind(payroll2013, year)\n\ncolnames(payroll2013)[59] <- \"Benefits\"\ncolnames(payroll2013)[43] <- \"Earnings\"\n\n\nsubset2013 <- data.frame(payroll2013$Name, \n           payroll2013$Job.Title, \n           payroll2013$Bargaining.Unit,\n           payroll2013$Earnings, \n           payroll2013$Overtime, \n           payroll2013$Benefits,\n           payroll2013$year)\ncolnames(subset2013) <- colnames(payroll2012)\n\n\npayroll <- rbind(payroll2012, subset2013)\npayroll$year <- factor(payroll$year)\n\nsave(payroll, file = \"payroll.rda\")\n",
+    "created" : 1408308704089.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2587829704",
+    "id" : "FD8368E8",
+    "lastKnownWriteTime" : 1408310842,
+    "path" : "C:/Users/Hans T/Desktop/Muni_Payroll_Explorer/combine years.R",
+    "project_path" : "combine years.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

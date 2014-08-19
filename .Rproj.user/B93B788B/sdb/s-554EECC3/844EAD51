@@ -1,0 +1,17 @@
+{
+    "contents" : "load(\"payroll.rda\")",
+    "created" : 1408314270156.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2721139947",
+    "id" : "844EAD51",
+    "lastKnownWriteTime" : 1408314302,
+    "path" : "C:/Users/Hans T/Desktop/Muni_Payroll_Explorer/global.r",
+    "project_path" : "global.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

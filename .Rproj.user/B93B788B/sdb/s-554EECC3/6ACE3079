@@ -1,0 +1,16 @@
+{
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n\n  # Application title\n  titlePanel(\"Old Faithful Geyser Data\"),\n\n  # Sidebar with a slider input for number of bins\n  sidebarLayout(\n    sidebarPanel(\n      selectInput(\"Bargaining.Unit\", \"Labor Orgainization\", levels(payroll$Bargaining.Unit)),\n      selectInput('year', 'Year', levels(payroll$year)),\n      selectInput('cost', 'Pay Type', c(\"Earnings\", \"Overtime\", \"Benefits\"))\n      ),\n      \n    # Show a plot of the generated distribution\n    mainPanel(\n      plotOutput(\"hist\")\n    )\n)))\n",
+    "created" : 1408300706869.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2780697301",
+    "id" : "6ACE3079",
+    "lastKnownWriteTime" : 1408308930,
+    "path" : "C:/Users/Hans T/Desktop/Muni_Payroll_Explorer/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
