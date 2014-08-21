@@ -10,7 +10,7 @@ library(ggplot2)
 shinyServer(function(input, output) {
 
   
-  load(file = "C:/Users/Hans T/Desktop/Muni_Payroll_Explorer/payroll.rda")
+  load(file = "payroll.rda")
 
   dat <- reactive({
     payroll[payroll$Bargaining.Unit == input$Bargaining.Unit & payroll$year == input$year ,]
@@ -28,7 +28,7 @@ shinyServer(function(input, output) {
    }
    
    if(input$cost == "Benefits") {
-     p <- ggplot(data = dat()) + geom_bar (aes(x = Benefits, fill = Job.Title))# +    scale_fill_brewer(palette="Set1")
+     p <- ggplot(data = dat()) + geom_bar (aes(x = Benefits, fill = Job.Title))
      print(p)
    }
   })
