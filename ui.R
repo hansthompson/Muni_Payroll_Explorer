@@ -10,7 +10,7 @@ library(shiny)
 shinyUI(fluidPage(
 
   # Application title
-  titlePanel("Old Faithful Geyser Data"),
+  titlePanel("Muni_Payroll_Explorer"),
 
   # Sidebar with a slider input for number of bins
   sidebarLayout(
