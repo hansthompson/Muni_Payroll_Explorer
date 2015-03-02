@@ -8,3 +8,15 @@ This is a web application made with the R framework, shiny.  It was designed to 
 The creator of this web application is only interested in presenting the data and has no interest in presenting an argument for support or repeal of AO37. 
 
 Job Titles were simplfied to catorgize them by removing steps (ie. I, II, III, IV, ...).
+
+
+To Do 
+--------------------
+
+Directory 
+
+- Clean up with a good .gitignore file to account for shinyapps.io, rstudio, etc. 
+
+App
+
+- Evaluate
